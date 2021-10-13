@@ -12,7 +12,7 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
     - name: update brew and install dependencies
-      run: brew update && brew install boost zmq libpgm miniupnpc ldns expat libunwind-headers protobuf qt5 
+      run: brew update && brew install boost openssl zmq libpgm miniupnpc ldns expat libunwind-headers protobuf qt5 
     - name: fetch zmq.hpp
       run: brew tap osrf/simulation && brew install cppzmq
     - name: build
