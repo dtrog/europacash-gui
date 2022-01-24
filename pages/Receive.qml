@@ -53,15 +53,15 @@ Rectangle {
     property alias addressText : pageReceive.current_address
 
     function makeQRCodeString() {
-        var s = "aeon:"
-        var nfields = 0
-        s += current_address;
-        var amount = amountToReceiveLine.text.trim()
-        if (amount !== "" && amount.slice(-1) !== ".") {
-          s += (nfields++ ? "&" : "?")
-          s += "tx_amount=" + amount
+        var XMR_URI_SCHEME = "aeon:"
+        var XMR_AMOUNT = "tx_amount"
+        var qrCodeString =""
+        var amount = amountToReceiveLine.text
+        qrCodeString += (XMR_URI_SCHEME + current_address)
+        if (amount !== ""){
+          qrCodeString += ("?" + XMR_AMOUNT + "=" + amount)
         }
-        return s
+        return qrCodeString
     }
 
     function update() {
@@ -385,7 +385,7 @@ Rectangle {
                             inputDialog.inputText = qsTr("(Untitled)")
                             inputDialog.onAcceptedCallback = function() {
                                 appWindow.currentWallet.subaddress.addRow(appWindow.currentWallet.currentSubaddressAccount, inputDialog.inputText)
-                                current_subaddress_table_index = appWindow.currentWallet.numSubaddresses() - 1
+                                current_subaddress_table_index = appWindow.currentWallet.numSubaddresses(appWindow.currentWallet.currentSubaddressAccount) - 1
                             }
                             inputDialog.onRejectedCallback = null;
                             inputDialog.open()
@@ -452,8 +452,13 @@ Rectangle {
                         placeholderText: qsTr("Amount to receive") + translationManager.emptyString
                         fontBold: true
                         inlineIcon: true
+                        onTextChanged: {
+                            if (amountToReceiveLine.text.startsWith('.')) {
+                                amountToReceiveLine.text = '0' + amountToReceiveLine.text;
+                            }
+                        }
                         validator: RegExpValidator {
-                            regExp: /(\d{1,8})([.]\d{1,12})?$/
+                            regExp: /^(\d{1,8})?([\.]\d{1,12})?$/
                         }
                     }
 
@@ -496,14 +501,14 @@ Rectangle {
                         }
                     }
 
-                    LineEdit {
+                    LineEditMulti {
                         id: paymentUrl
                         Layout.fillWidth: true
                         labelText: qsTr("Payment URL") + translationManager.emptyString
-                        text: makeQRCodeString()
-                        onTextUpdated: function() { paymentUrl.cursorPosition = 0; }
+                        text: makeQRCodeString()                        
                         readOnly: true
                         copyButton: true
+                        wrapMode: Text.WrapAnywhere
                     }
                 }
             }

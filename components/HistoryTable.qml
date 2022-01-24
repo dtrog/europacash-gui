@@ -175,7 +175,23 @@ ListView {
 
                     return _amount + " AEON";
                 }
-                color: isOut ? "white" : "#2eb358"
+                color: isOut ? MoneroComponents.Style.white : MoneroComponents.Style.green
+
+                MouseArea {
+                        hoverEnabled: true
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onEntered: {
+                            parent.color = MoneroComponents.Style.blue
+                        }
+                        onExited: {
+                            parent.color = isOut ? MoneroComponents.Style.white : MoneroComponents.Style.green                        }
+                        onClicked: {
+                                console.log("Copied to clipboard");
+                                clipboard.setText(parent.text.split(" ")[0]);
+                                appWindow.showStatusMessage(qsTr("Copied to clipboard"),3)
+                        }
+                    }
             }
 
             Rectangle {
@@ -293,7 +309,7 @@ ListView {
                 anchors.left: parent.left
                 anchors.leftMargin: 30 * scaleRatio
 
-                labelHeader: QsTr("Transaction ID") + translationManager.emptyString
+                labelHeader: qsTr("Transaction ID") + translationManager.emptyString
                 labelValue: hash.substring(0, 18) + "..."
                 copyValue: hash
             }
