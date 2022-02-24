@@ -13,13 +13,19 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
     - name: install dependencies
-      run: HOMEBREW_NO_AUTO_UPDATE=1 brew install boost openssl zmq libpgm miniupnpc ldns expat libunwind-headers protobuf qt5 
-    - name: force link qt5
-      run: brew link qt5 --force
+      run: HOMEBREW_NO_AUTO_UPDATE=1 brew install boost openssl zmq libpgm miniupnpc ldns expat libunwind-headers protobuf
+    - name: install qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.14.2'
+    - name: add qt to path
+      run: echo "$Qt5_Dir/bin" >> $GITHUB_PATH
+    - name: check qt version
+      run: qmake --version
     - name: fetch zmq.hpp
       run: brew tap osrf/simulation && brew install cppzmq
     - name: build
-      run: export PATH=$PATH:/usr/local/opt/qt/bin && ./build.sh
+      run: ./build.sh
     - name: test qml
       run: build/release/bin/aeon-wallet-gui.app/Contents/MacOS/aeon-wallet-gui --test-qml
     - name: deploy
