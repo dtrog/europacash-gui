@@ -121,7 +121,18 @@ jobs:
     - uses: eine/setup-msys2@v2
       with:
         update: true
-        install: mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-protobuf-c git mingw-w64-x86_64-qt5 mingw-w64-x86_64-hidapi zip curl
+        install: mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-protobuf-c git mingw-w64-x86_64-hidapi zip curl mingw-w64-x86_64-libtiff mingw-w64-x86_64-libpng mingw-w64-x86_64-pcre mingw-w64-x86_64-pcre2 mingw-w64-x86_64-libmng mingw-w64-x86_64-lcms2 mingw-w64-x86_64-libjpeg-turbo mingw-w64-x86_64-libiconv mingw-w64-x86_64-harfbuzz mingw-w64-x86_64-graphite2 mingw-w64-x86_64-glib2 mingw-w64-x86_64-freetype mingw-w64-x86_64-double-conversion mingw-w64-x86_64-md4c
+    - name: install qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.14.2'
+        arch: 'win64_mingw73'
+    - name: copy qt to /usr/local   # because $GITHUB_PATH doesn't seem to work on msys somehow
+      run: |
+        mkdir -p /usr/local
+        cp -rf $Qt5_Dir/* /usr/local
+    - name: check qt version
+      run: qmake --version
     - name: build
       run: |
         sed -i 's/CONFIG\ +=\ qtquickcompiler//' aeon-wallet-gui.pro
