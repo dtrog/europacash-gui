@@ -57,7 +57,7 @@ jobs:
 
   build-ubuntu:
  
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
  
     steps:
     - uses: actions/checkout@v1
@@ -74,6 +74,8 @@ jobs:
       run: sudo apt update
     - name: install aeon dependencies
       run: sudo apt -y install build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libzmq3-dev libsodium-dev libnorm-dev libpgm-dev
+    - name: install dependencies for deployment
+      run: sudo apt -y install libgstreamer-plugins-base1.0-dev icnsutils
     - name: install qt
       uses: jurplel/install-qt-action@v2
       with:
@@ -86,15 +88,39 @@ jobs:
       run: ./build.sh
     - name: test qml
       run: xvfb-run -a build/release/bin/aeon-wallet-gui --test-qml
-    - name: deploy
-      run: make deploy
-      working-directory: build
     - name: build CLI
       run: |
         rm -rf build/
         USE_SINGLE_BUILDDIR=1 make release-static -j3
         cp build/release/bin/* ../build/release/bin/
       working-directory: monero
+    - name: deploy - create directory structure, copy files
+      run: |
+        mkdir -p AppDir/usr/{bin,lib,share}
+        mkdir -p AppDir/usr/share/{applications,icons}
+        mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
+        mv bin/aeon-wallet-gui AppDir/usr/bin
+        cp bin/aeond AppDir/usr/bin
+        icns2png -x ../../images/appicon.icns
+        mv appicon_256x256x32.png AppDir/usr/share/icons/hicolor/256x256/apps/aeon-wallet-gui.png
+      working-directory: build/release
+    - name: deploy - create desktop file
+      run: |
+        echo "[Desktop Entry]" >> aeon-wallet-gui.desktop
+        echo "Type=Application" >> aeon-wallet-gui.desktop
+        echo "Name=aeon-wallet-gui" >> aeon-wallet-gui.desktop
+        echo "Comment=GUI wallet for AEON cryptocurrency" >> aeon-wallet-gui.desktop
+        echo "Exec=aeon-wallet-gui" >> aeon-wallet-gui.desktop
+        echo "Icon=aeon-wallet-gui" >> aeon-wallet-gui.desktop
+        echo "Categories=Finance;" >> aeon-wallet-gui.desktop
+      working-directory: build/release/AppDir/usr/share/applications
+    - name: deploy - run linuxdeployqt
+      run: |
+        wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/8/linuxdeployqt-continuous-x86_64.AppImage"
+        chmod a+x linuxdeployqt-continuous-x86_64.AppImage
+        ./linuxdeployqt-continuous-x86_64.AppImage AppDir/usr/share/applications/aeon-wallet-gui.desktop -appimage -qmldir=../..
+        mv aeon-wallet-gui-*.AppImage bin/aeon-wallet-gui.AppImage
+      working-directory: build/release
     - name: archive
       run: |
         export ARTIFACT_NAME="aeon-gui-linux-x64-$(git describe --tags)"
