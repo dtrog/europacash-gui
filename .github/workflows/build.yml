@@ -27,6 +27,7 @@ jobs:
       working-directory: build
     - name: build CLI
       run: |
+        rm -rf build/
         USE_SINGLE_BUILDDIR=1 make release-static -j3
         cp build/release/bin/* ../build/release/bin/
       working-directory: monero
@@ -78,6 +79,7 @@ jobs:
       working-directory: build
     - name: build CLI
       run: |
+        rm -rf build/
         USE_SINGLE_BUILDDIR=1 make release-static -j3
         cp build/release/bin/* ../build/release/bin/
       working-directory: monero
@@ -125,6 +127,7 @@ jobs:
       working-directory: build
     - name: build CLI
       run: |
+        rm -rf build/
         USE_SINGLE_BUILDDIR=1 make release-static-win64 -j2
         cp build/release/bin/* ../build/release/bin/
       working-directory: monero
