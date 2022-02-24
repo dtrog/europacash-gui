@@ -74,8 +74,14 @@ jobs:
       run: sudo apt update
     - name: install aeon dependencies
       run: sudo apt -y install build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libzmq3-dev libsodium-dev libnorm-dev libpgm-dev
-    - name: install aeon gui dependencies
-      run: sudo apt -y install qtbase5-dev qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtquick-controls2 qml-module-qtquick-dialogs qml-module-qtquick-xmllistmodel qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel qttools5-dev-tools qml-module-qtquick-templates2 libqt5svg5-dev xvfb
+    - name: install qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.14.2'
+    - name: add qt to path
+      run: echo "$Qt5_Dir/bin" >> $GITHUB_PATH
+    - name: qt check version
+      run: qmake --version
     - name: build
       run: ./build.sh
     - name: test qml
