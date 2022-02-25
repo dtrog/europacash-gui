@@ -36,6 +36,7 @@ jobs:
         rm -rf build/
         USE_SINGLE_BUILDDIR=1 make release-static -j3
         cp build/release/bin/* ../build/release/bin/
+        cp build/release/bin/aeond ../build/release/bin/aeon-wallet-gui.app/Contents/MacOS/aeond
       working-directory: monero
     - name: archive
       run: |
