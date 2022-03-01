@@ -98,6 +98,8 @@ jobs:
       run: qmake --version
     - name: build
       run: ./build.sh
+    - name: check size of aeon-wallet-gui
+      run: ls -l build/release/bin/aeon-wallet-gui
     - name: test qml
       run: xvfb-run -a build/release/bin/aeon-wallet-gui --test-qml
     - name: build CLI
