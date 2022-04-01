@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   build-macos:
 
-    runs-on: macOS-latest
+    runs-on: macOS-11
     
     steps:
     - uses: actions/checkout@v2
