@@ -49,6 +49,10 @@ jobs:
     - name: SHA256 checksum
       run: openssl sha256 ${{ env.ARTIFACT_NAME }}.tar.bz2
       working-directory: build/release
+    - uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: build/release/${{ env.ARTIFACT_NAME }}.tar.bz2
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ env.ARTIFACT_NAME }}.tar.bz2
@@ -146,6 +150,10 @@ jobs:
     - name: SHA256 checksum
       run: openssl sha256 ${{ env.ARTIFACT_NAME }}.tar.bz2
       working-directory: build/release
+    - uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: build/release/${{ env.ARTIFACT_NAME }}.tar.bz2
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ env.ARTIFACT_NAME }}.tar.bz2
@@ -205,6 +213,10 @@ jobs:
     - name: SHA256 checksum
       run: openssl sha256 ${{ env.ARTIFACT_NAME }}.zip
       working-directory: build/release
+    - uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: build/release/${{ env.ARTIFACT_NAME }}.zip
     - uses: actions/upload-artifact@v2
       with:
         name: ${{ env.ARTIFACT_NAME }}.zip
