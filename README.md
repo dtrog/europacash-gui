@@ -1,6 +1,6 @@
 # Aeon GUI
 
-Copyright (c) 2014-2018, AEON, The Monero Project
+Copyright (c) 2014-2022, AEON, The Monero Project
 
 ## Development resources
 
