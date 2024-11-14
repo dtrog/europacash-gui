@@ -9,5 +9,6 @@ moc_*
 *.mak
 *.build
 *.xcodeproj
+*.vscode
 europacash-wallet-gui_plugin_import.cpp
 europacash-wallet-gui_qml_plugin_import.cpp

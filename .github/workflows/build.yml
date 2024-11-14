@@ -127,7 +127,7 @@ jobs:
         echo "[Desktop Entry]" >> europacash-wallet-gui.desktop
         echo "Type=Application" >> europacash-wallet-gui.desktop
         echo "Name=europacash-wallet-gui" >> europacash-wallet-gui.desktop
-        echo "Comment=GUI wallet for AEON cryptocurrency" >> europacash-wallet-gui.desktop
+        echo "Comment=GUI wallet for EuropaCash cryptocurrency" >> europacash-wallet-gui.desktop
         echo "Exec=europacash-wallet-gui" >> europacash-wallet-gui.desktop
         echo "Icon=europacash-wallet-gui" >> europacash-wallet-gui.desktop
         echo "Categories=Finance;" >> europacash-wallet-gui.desktop

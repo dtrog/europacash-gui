@@ -7,7 +7,7 @@ Copyright (c) 2014-2022, AEON, The Monero Project
 - Web: [europacash.cash](http://europacash.cash)
 - Bitcointalk: https://bitcointalk.org/index.php?topic=641696.0
 - Reddit: https://www.reddit.com/r/EuropaCash
-- Github: [https://github.com/europacashix/europacash-gui](https://github.com/europacashix/europacash-gui)
+- Github: [https://github.com/europacash/europacash-gui](https://github.com/europacash/europacash-gui)
 - IRC: [#europacash on Freenode](irc://chat.freenode.net/#europacash)
 
 ## Vulnerability response
@@ -28,7 +28,7 @@ EuropaCash is a private, secure, untraceable, decentralised digital currency. Yo
 
 ## About this project
 
-This is the GUI for the [core EuropaCash implementation](https://github.com/europacashix/europacash). It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of EuropaCash that uses the protocol and network in a compatible manner.
+This is the GUI for the [core EuropaCash implementation](https://github.com/dtrog/europacash). It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of EuropaCash that uses the protocol and network in a compatible manner.
 
 As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
 
@@ -109,7 +109,7 @@ Packaging for your favorite distribution would be a welcome contribution!
 
 3. Clone repository
 
-    `git clone https://github.com/europacashix/europacash-gui.git`
+    `git clone https://github.com/dtrog/europacash-gui.git`
 
 4. Build
 
@@ -126,7 +126,7 @@ The executable can be found in the build/release/bin folder.
 
 2. Install [homebrew](http://brew.sh/)
 
-3. Install [EuropaCash](https://github.com/europacashix/europacash) dependencies:
+3. Install [EuropaCash](https://github.com/dtrog/europacash) dependencies:
 
   `brew install boost --c++11`
 
@@ -156,7 +156,7 @@ The executable can be found in the build/release/bin folder.
 
 6. Grab an up-to-date copy of the europacash-gui repository
 
-  `git clone https://github.com/europacashix/europacash-gui.git`
+  `git clone https://github.com/europacash/europacash-gui.git`
 
 7. Go into the repository
 
@@ -195,7 +195,7 @@ The EuropaCash GUI on Windows is 64 bits only; 32-bit Windows GUI builds are not
     pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi
     ```
 
-    You find more details about those dependencies in the [EuropaCash documentation](https://github.com/europacashix/europacash). Note that that there is no more need to compile Boost from source; like everything else, you can install it now with a MSYS2 package.
+    You find more details about those dependencies in the [EuropaCash documentation](https://github.com/dtrog/europacash). Note that that there is no more need to compile Boost from source; like everything else, you can install it now with a MSYS2 package.
 
 4. Install Qt5
 
@@ -214,7 +214,7 @@ The EuropaCash GUI on Windows is 64 bits only; 32-bit Windows GUI builds are not
 6. Clone repository
 
     ```
-    git clone https://github.com/europacashix/europacash-gui.git
+    git clone https://github.com/dtrog/europacash-gui.git
     ```
 
 7. Build
