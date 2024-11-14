@@ -1,42 +1,42 @@
-# Aeon interfaz gráfica de usuario (GUI)
+# EuropaCash interfaz gráfica de usuario (GUI)
 
 Copyright (c) 2014-2022, AEON, The Monero Project
 
 ## Recursos de Desarrolo
 
-- Web: [aeon.cash](http://aeon.cash)
+- Web: [europacash.cash](http://europacash.cash)
 - Bitcointalk: https://bitcointalk.org/index.php?topic=641696.0
-- Reddit: https://www.reddit.com/r/Aeon
-- Github: [https://github.com/aeonix/aeon-gui](https://github.com/aeonix/aeon-gui)
-- IRC: [#aeon on Freenode](irc://chat.freenode.net/#aeon)
+- Reddit: https://www.reddit.com/r/EuropaCash
+- Github: [https://github.com/europacashix/europacash-gui](https://github.com/europacashix/europacash-gui)
+- IRC: [#europacash on Freenode](irc://chat.freenode.net/#europacash)
 
 ## Respuesta de Vulnerabilidad
 
-- La respuesta a la vulnerrabilidad debe ser redirigida a Monero porque gran parte del terreno técnico de Aeon se comparte
+- La respuesta a la vulnerrabilidad debe ser redirigida a Monero porque gran parte del terreno técnico de EuropaCash se comparte
 - Nuestro [Proceso de Respuesta de Vulnerabilidad](https://github.com/monero-project/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) fomenta la divulgación responsablemente
 - También estamos disponibles a través de [HackerOne](https://hackerone.com/monero)
 
 ## Introducción
 
-Aeon es una moneda digital privada, segura, imposible de rastrear y descentralizada. Usted es su banco, controla sus fondos y nadie puede rastrear sus transferencias a menos que usted lo permita.
+EuropaCash es una moneda digital privada, segura, imposible de rastrear y descentralizada. Usted es su banco, controla sus fondos y nadie puede rastrear sus transferencias a menos que usted lo permita.
 
-**Privacidad:** Aeon utiliza un sistema criptográficamente sólido que le permite enviar y recibir fondos sin que sus transacciones se revelen fácilmente en la cadena de bloques (el libro mayor de transacciones que todos tienen). Esto garantiza que sus compras, recibos y todas las transferencias permanezcan absolutamente privadas de forma predeterminada.
+**Privacidad:** EuropaCash utiliza un sistema criptográficamente sólido que le permite enviar y recibir fondos sin que sus transacciones se revelen fácilmente en la cadena de bloques (el libro mayor de transacciones que todos tienen). Esto garantiza que sus compras, recibos y todas las transferencias permanezcan absolutamente privadas de forma predeterminada.
 
 **Seguridad:** Usando el poder de una red de consenso de persona-a-persona distribuida, cada transacción en la red está protegida criptográficamente. Las billeteras individuales tienen una semilla mnemotécnica de 25 palabras que solo se muestra una vez, y se pueden escribir para respaldar la billetera. Los archivos de la cartera se cifran con una frase de contraseña para garantizar que son inútiles en caso de robo.
 
-**Intrazabilidad:** Al tomar ventaja de las firmas de anillo, una propiedad especial de cierto tipo de criptografía, Aeon puede garantizar que las transacciones no solo sean imposibles de rastrear, sino que tengan una medida de ambigüedad opcional que garantiza que las transacciones no se puedan vincular a un usuario individual o computadora.
+**Intrazabilidad:** Al tomar ventaja de las firmas de anillo, una propiedad especial de cierto tipo de criptografía, EuropaCash puede garantizar que las transacciones no solo sean imposibles de rastrear, sino que tengan una medida de ambigüedad opcional que garantiza que las transacciones no se puedan vincular a un usuario individual o computadora.
 
 ## Sobre este Proyecto
 
-Esta es la GUI para la [Implementación central de Aeon](https://github.com/aeonix/aeon). Es de código abierto y de uso completamente gratuito y sin restricciones, excepto las que se especifican en el acuerdo de licencia a continuación. No hay restricciones para que nadie cree una implementación alternativa de Aeon que use el protocolo y la red de una manera compatible.
+Esta es la GUI para la [Implementación central de EuropaCash](https://github.com/europacashix/europacash). Es de código abierto y de uso completamente gratuito y sin restricciones, excepto las que se especifican en el acuerdo de licencia a continuación. No hay restricciones para que nadie cree una implementación alternativa de EuropaCash que use el protocolo y la red de una manera compatible.
 
 Al igual que con muchos proyectos de desarrollo, el repositorio en Github se considera el área de "preparación" para los últimos cambios. Antes de implementar los cambios en esa rama en el repositorio principal, los desarrolladores individuales los prueban en sus propias sucursales, se envían como una solicitud de extracción y luego son evaluados por los colaboradores que se centran en las pruebas y revisiones de código. Dicho esto, el repositorio se debe considerar cuidadosamente antes de usarlo en un entorno de producción, a menos que haya un parche en el repositorio para un problema particular de detención del sistema que esté experimentando. En general, es una mejor idea utilizar una versión etiquetada para la estabilidad.
 
 ## Apoyando el Proyecto
 
-Aeon es una empresa 100% patrocinada por la comunidad. Si desea sumarse a nuestros esfuerzos, lo más fácil que puede hacer es respaldar financieramente el proyecto. Se pueden hacer donaciones de Aeon y de Bitcoin a **donate.aeon.cash** si se usa un cliente que admite el [OpenAlias](https://openalias.org) estándar.
+EuropaCash es una empresa 100% patrocinada por la comunidad. Si desea sumarse a nuestros esfuerzos, lo más fácil que puede hacer es respaldar financieramente el proyecto. Se pueden hacer donaciones de EuropaCash y de Bitcoin a **donate.europacash.cash** si se usa un cliente que admite el [OpenAlias](https://openalias.org) estándar.
 
-La dirección de donación de Aeon es: `WmsSWgtT1JPg5e3cK41hKXSHVpKW7e47bjgiKmWZkYrhSS5LhRemNyqayaSBtAQ6517eo5PtH9wxHVmM78JDZSUu2W8PqRiNs` (viewkey: `71bf19a7348ede17fa487167710dac401ef1556851bfd36b76040facf051630b`)
+La dirección de donación de EuropaCash es: `WmsSWgtT1JPg5e3cK41hKXSHVpKW7e47bjgiKmWZkYrhSS5LhRemNyqayaSBtAQ6517eo5PtH9wxHVmM78JDZSUu2W8PqRiNs` (viewkey: `71bf19a7348ede17fa487167710dac401ef1556851bfd36b76040facf051630b`)
 
 La dirección de la donación de Bitcoin es: `12Cyjf3qV6qLyXdzpLSLPdRFPUVidvnzFM`
 
@@ -56,23 +56,23 @@ También hay varios grupos mineros que donan amablemente una parte de sus tarifa
 
 Vea [Licencia](Licencia).
 
-## Instalación de la interfaz gráfica de usuario (GUI) de Aeon desde un paquete
+## Instalación de la interfaz gráfica de usuario (GUI) de EuropaCash desde un paquete
 
 (**TODO**) ~Los paquetes están disponibles para~
 
-* ~Arch Linux via AUR: [aeon-wallet-qt](https://aur.archlinux.org/packages/aeon-wallet-qt/)~
-* ~Void Linux: xbps-install -S aeon-core~
-* ~GuixSD: guix package -i aeon-core~
+* ~Arch Linux via AUR: [europacash-wallet-qt](https://aur.archlinux.org/packages/europacash-wallet-qt/)~
+* ~Void Linux: xbps-install -S europacash-core~
+* ~GuixSD: guix package -i europacash-core~
 
 ¡Empaquetar para su distribución favorita sería una contribución bienvenida!
 
-## Compilando la interfaz gráfica de usuario (GUI) de Aeon desde el código
+## Compilando la interfaz gráfica de usuario (GUI) de EuropaCash desde el código
 
 ### En Linux:
 
 (Probado en Ubuntu 17.10 x64, Ubuntu 18.04 x64 y Gentoo x64)
 
-1. Instalar dependencias Aeon
+1. Instalar dependencias EuropaCash
 
   - Para distribuciones Debian (Debian, Ubuntu, Mint, Tails...)
 
@@ -109,12 +109,12 @@ Vea [Licencia](Licencia).
 
 3. Copia el repositorio
 
-    `git clone https://github.com/aeonix/aeon-gui.git`
+    `git clone https://github.com/europacashix/europacash-gui.git`
 
 4. Construir
 
     ```
-    cd aeon-gui
+    cd europacash-gui
     QT_SELECT=5 ./build.sh
     ```
 
@@ -127,7 +127,7 @@ El ejecutable se puede encontrar en la carpeta build/release/bin.
 
 2. Instalar [homebrew](http://brew.sh/)
 
-3. Instalar [Aeon](https://github.com/aeonix/aeon) dependencias:
+3. Instalar [EuropaCash](https://github.com/europacashix/europacash) dependencias:
 
   `brew install boost --c++11`
 
@@ -155,13 +155,13 @@ El ejecutable se puede encontrar en la carpeta build/release/bin.
 
     Este es el directorio donde Qt 5.x está instalado en **su** sistema
 
-6. Obtenga una copia actualizada del repositorio de aeon-gui
+6. Obtenga una copia actualizada del repositorio de europacash-gui
 
-  `git clone https://github.com/aeonix/aeon-gui.git`
+  `git clone https://github.com/europacashix/europacash-gui.git`
 
 7. Entra en el repositorio
 
-  `cd aeon-gui`
+  `cd europacash-gui`
 
 8. Comience la construcción
 
@@ -184,19 +184,19 @@ Mas informacion: http://stackoverflow.com/a/35098040/1683164
 
 ### En Windows:
 
-La interfaz gráfica de usuario (GUI) de Aeon en Windows es solo de 64 bits; Las versiones de Windows GUI de 32 bits ya no son oficialmente compatibles.
+La interfaz gráfica de usuario (GUI) de EuropaCash en Windows es solo de 64 bits; Las versiones de Windows GUI de 32 bits ya no son oficialmente compatibles.
 
 1. Intalar [MSYS2](https://www.msys2.org/), siga las instrucciones del sistema y los paquetes a las últimas versiones.
 
 2. Abra un shell MSYS2 de 64 bits: use el método abreviado *MSYS2 MinGW de 64 bit*, o use el archivo por lotes `msys2_shell.cmd` con un parámetro `-mingw64`
 
-3. Instalar paquetes MSYS2 para dependencias de Aeon; Los paquetes de 64 bits necesarios tienen `x86_64` en sus nombres.
+3. Instalar paquetes MSYS2 para dependencias de EuropaCash; Los paquetes de 64 bits necesarios tienen `x86_64` en sus nombres.
 
     ```
     pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi
     ```
 
-    Encontrará más detalles sobre esas dependencias en la [documentación de Aeon](https://github.com/aeonix/aeon). Tenga en cuenta que no hay más necesidad de compilar Boost desde el codigo; como todo lo demás, puede instalarlo ahora con un paquete MSYS2.
+    Encontrará más detalles sobre esas dependencias en la [documentación de EuropaCash](https://github.com/europacashix/europacash). Tenga en cuenta que no hay más necesidad de compilar Boost desde el codigo; como todo lo demás, puede instalarlo ahora con un paquete MSYS2.
 
 4. Instalar Qt5
 
@@ -215,13 +215,13 @@ La interfaz gráfica de usuario (GUI) de Aeon en Windows es solo de 64 bits; Las
 6. Copia el repositorio
 
     ```
-    git clone https://github.com/aeonix/aeon-gui.git
+    git clone https://github.com/europacashix/europacash-gui.git
     ```
 
 7. Construir
 
     ```
-    cd aeon-gui
+    cd europacash-gui
     source ./build.sh release-static
     cd build
     make deploy

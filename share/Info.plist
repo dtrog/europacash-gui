@@ -18,13 +18,13 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>aeon-wallet-gui</string>
+  <string>europacash-wallet-gui</string>
   
   <key>CFBundleName</key>
-  <string>Aeon GUI</string>
+  <string>EuropaCash GUI</string>
 
   <key>CFBundleIdentifier</key>
-  <string>cash.aeon.aeon-wallet-gui</string>
+  <string>cash.europacash.europacash-wallet-gui</string>
 
   <key>NSSupportsAutomaticGraphicsSwitching</key>
   <true/>

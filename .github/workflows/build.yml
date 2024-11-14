@@ -27,7 +27,7 @@ jobs:
     - name: build
       run: ./build.sh
     - name: test qml
-      run: build/release/bin/aeon-wallet-gui.app/Contents/MacOS/aeon-wallet-gui --test-qml
+      run: build/release/bin/europacash-wallet-gui.app/Contents/MacOS/europacash-wallet-gui --test-qml
     - name: deploy
       run: make deploy
       working-directory: build
@@ -36,11 +36,11 @@ jobs:
         rm -rf build/
         USE_SINGLE_BUILDDIR=1 make release-static -j3
         cp build/release/bin/* ../build/release/bin/
-        cp build/release/bin/aeond ../build/release/bin/aeon-wallet-gui.app/Contents/MacOS/aeond
+        cp build/release/bin/europacashd ../build/release/bin/europacash-wallet-gui.app/Contents/MacOS/europacashd
       working-directory: monero
     - name: archive
       run: |
-        export ARTIFACT_NAME="aeon-gui-mac-x64-$(git describe --tags)"
+        export ARTIFACT_NAME="europacash-gui-mac-x64-$(git describe --tags)"
         mkdir $ARTIFACT_NAME
         cp -rf bin/* $ARTIFACT_NAME
         tar cvzf $ARTIFACT_NAME.tar.bz2 $ARTIFACT_NAME
@@ -77,7 +77,7 @@ jobs:
         echo "Acquire::ftp::Timeout \"120\";" | sudo tee -a /etc/apt/apt.conf.d/80-custom
     - name: update apt
       run: sudo apt update
-    - name: install aeon dependencies
+    - name: install europacash dependencies
       run: sudo apt -y install build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libsodium-dev
     - name: build & install static zmq
       run: |
@@ -102,10 +102,10 @@ jobs:
       run: qmake --version
     - name: build
       run: ./build.sh debug
-    - name: check size of aeon-wallet-gui
-      run: ls -l build/debug/bin/aeon-wallet-gui
+    - name: check size of europacash-wallet-gui
+      run: ls -l build/debug/bin/europacash-wallet-gui
     - name: test qml
-      run: xvfb-run -a build/debug/bin/aeon-wallet-gui --test-qml
+      run: xvfb-run -a build/debug/bin/europacash-wallet-gui --test-qml
     - name: build CLI
       run: |
         rm -rf build/
@@ -117,31 +117,31 @@ jobs:
         mkdir -p AppDir/usr/{bin,lib,share}
         mkdir -p AppDir/usr/share/{applications,icons}
         mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
-        mv bin/aeon-wallet-gui AppDir/usr/bin
-        cp bin/aeond AppDir/usr/bin
+        mv bin/europacash-wallet-gui AppDir/usr/bin
+        cp bin/europacashd AppDir/usr/bin
         icns2png -x ../../images/appicon.icns
-        mv appicon_256x256x32.png AppDir/usr/share/icons/hicolor/256x256/apps/aeon-wallet-gui.png
+        mv appicon_256x256x32.png AppDir/usr/share/icons/hicolor/256x256/apps/europacash-wallet-gui.png
       working-directory: build/debug
     - name: deploy - create desktop file
       run: |
-        echo "[Desktop Entry]" >> aeon-wallet-gui.desktop
-        echo "Type=Application" >> aeon-wallet-gui.desktop
-        echo "Name=aeon-wallet-gui" >> aeon-wallet-gui.desktop
-        echo "Comment=GUI wallet for AEON cryptocurrency" >> aeon-wallet-gui.desktop
-        echo "Exec=aeon-wallet-gui" >> aeon-wallet-gui.desktop
-        echo "Icon=aeon-wallet-gui" >> aeon-wallet-gui.desktop
-        echo "Categories=Finance;" >> aeon-wallet-gui.desktop
+        echo "[Desktop Entry]" >> europacash-wallet-gui.desktop
+        echo "Type=Application" >> europacash-wallet-gui.desktop
+        echo "Name=europacash-wallet-gui" >> europacash-wallet-gui.desktop
+        echo "Comment=GUI wallet for AEON cryptocurrency" >> europacash-wallet-gui.desktop
+        echo "Exec=europacash-wallet-gui" >> europacash-wallet-gui.desktop
+        echo "Icon=europacash-wallet-gui" >> europacash-wallet-gui.desktop
+        echo "Categories=Finance;" >> europacash-wallet-gui.desktop
       working-directory: build/debug/AppDir/usr/share/applications
     - name: deploy - run linuxdeployqt
       run: |
         wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/8/linuxdeployqt-continuous-x86_64.AppImage"
         chmod a+x linuxdeployqt-continuous-x86_64.AppImage
-        ./linuxdeployqt-continuous-x86_64.AppImage AppDir/usr/share/applications/aeon-wallet-gui.desktop -appimage -qmldir=../..
-        mv aeon-wallet-gui-*.AppImage bin/aeon-wallet-gui.AppImage
+        ./linuxdeployqt-continuous-x86_64.AppImage AppDir/usr/share/applications/europacash-wallet-gui.desktop -appimage -qmldir=../..
+        mv europacash-wallet-gui-*.AppImage bin/europacash-wallet-gui.AppImage
       working-directory: build/debug
     - name: archive
       run: |
-        export ARTIFACT_NAME="aeon-gui-linux-x64-$(git describe --tags)"
+        export ARTIFACT_NAME="europacash-gui-linux-x64-$(git describe --tags)"
         mkdir $ARTIFACT_NAME
         cp -rf bin/* $ARTIFACT_NAME
         tar cvzf $ARTIFACT_NAME.tar.bz2 $ARTIFACT_NAME
@@ -189,10 +189,10 @@ jobs:
       run: qmake --version
     - name: build
       run: |
-        sed -i 's/CONFIG\ +=\ qtquickcompiler//' aeon-wallet-gui.pro
+        sed -i 's/CONFIG\ +=\ qtquickcompiler//' europacash-wallet-gui.pro
         ./build.sh release
     - name: test qml
-      run: build/release/bin/aeon-wallet-gui --test-qml
+      run: build/release/bin/europacash-wallet-gui --test-qml
     - name: deploy
       run: make deploy
       working-directory: build
@@ -204,7 +204,7 @@ jobs:
       working-directory: monero
     - name: archive
       run: |
-        export ARTIFACT_NAME="aeon-gui-win-x64-$(git describe --tags)"
+        export ARTIFACT_NAME="europacash-gui-win-x64-$(git describe --tags)"
         mkdir $ARTIFACT_NAME
         cp -rf bin/* $ARTIFACT_NAME
         zip -r9 $ARTIFACT_NAME.zip $ARTIFACT_NAME

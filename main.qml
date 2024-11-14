@@ -45,7 +45,7 @@ import "js/Windows.js" as Windows
 
 ApplicationWindow {
     id: appWindow
-    title: "Aeon"
+    title: "EuropaCash"
 
     property var currentItem
     property bool whatIsEnable: false
@@ -538,7 +538,7 @@ ApplicationWindow {
         currentWallet.startRefresh();
         daemonRunning = false;
         informationPopup.title = qsTr("Daemon failed to start") + translationManager.emptyString;
-        informationPopup.text  = qsTr("Please check your wallet and daemon log for errors. You can also try to start %1 manually.").arg((isWindows)? "aeond.exe" : "aeond")
+        informationPopup.text  = qsTr("Please check your wallet and daemon log for errors. You can also try to start %1 manually.").arg((isWindows)? "europacashd.exe" : "europacashd")
         informationPopup.icon  = StandardIcon.Critical
         informationPopup.onCloseCallback = null
         informationPopup.open();
@@ -792,7 +792,7 @@ ApplicationWindow {
                     txid_text += ", "
                 txid_text += txid[i]
             }
-            informationPopup.text  = (viewOnly)? qsTr("Transaction saved to file: %1").arg(path) : qsTr("Aeon sent successfully: %1 transaction(s) ").arg(txid.length) + txid_text + translationManager.emptyString
+            informationPopup.text  = (viewOnly)? qsTr("Transaction saved to file: %1").arg(path) : qsTr("EuropaCash sent successfully: %1 transaction(s) ").arg(txid.length) + txid_text + translationManager.emptyString
             informationPopup.icon  = StandardIcon.Information
             if (transactionDescription.length > 0) {
                 for (var i = 0; i < txid.length; ++i)
@@ -1287,7 +1287,7 @@ ApplicationWindow {
 //                PropertyChanges { target: frameArea; blocked: true }
                 PropertyChanges { target: titleBar; visible: true }
 //                PropertyChanges { target: titleBar; y: 0 }
-                PropertyChanges { target: titleBar; title: qsTr("Aeon") + translationManager.emptyString }
+                PropertyChanges { target: titleBar; title: qsTr("EuropaCash") + translationManager.emptyString }
                 PropertyChanges { target: mobileHeader; visible: isMobile ? true : false }
             }
         ]
@@ -1779,7 +1779,7 @@ ApplicationWindow {
           var hash = parts[1]
           var user_url = parts[2]
           var auto_url = parts[3]
-          var msg = qsTr("New version of aeon-wallet-gui is available: %1<br>%2").arg(version).arg(user_url) + translationManager.emptyString
+          var msg = qsTr("New version of europacash-wallet-gui is available: %1<br>%2").arg(version).arg(user_url) + translationManager.emptyString
           notifier.show(msg)
         }
         else {
@@ -1788,7 +1788,7 @@ ApplicationWindow {
     }
 
     function checkUpdates() {
-        walletManager.checkUpdatesAsync("aeon-gui", "gui")
+        walletManager.checkUpdatesAsync("europacash-gui", "gui")
     }
 
     Timer {

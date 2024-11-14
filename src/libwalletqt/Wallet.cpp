@@ -735,7 +735,7 @@ void Wallet::setWalletCreationHeight(quint64 height)
 
 QString Wallet::getDaemonLogPath() const
 {
-    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/aeon.log";
+    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/europacash.log";
 }
 
 quint32 Wallet::getDefaultRingSize() const

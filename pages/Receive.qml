@@ -53,7 +53,7 @@ Rectangle {
     property alias addressText : pageReceive.current_address
 
     function makeQRCodeString() {
-        var XMR_URI_SCHEME = "aeon:"
+        var XMR_URI_SCHEME = "europacash:"
         var XMR_AMOUNT = "tx_amount"
         var qrCodeString =""
         var amount = amountToReceiveLine.text

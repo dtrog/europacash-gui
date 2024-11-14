@@ -2,4 +2,4 @@
 
 set QMLSCENE_DEVICE=softwarecontext
 
-start /b aeon-wallet-gui.exe
+start /b europacash-wallet-gui.exe
